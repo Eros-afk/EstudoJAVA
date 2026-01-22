@@ -5,7 +5,7 @@ public class DiasNoMes{
             case "Janeiro", "Março", "Maio", "Julho", "Agosto", "Outubro", "Dezembro" -> "31";
             case "Abril", "Junho", "Setembro", "Novembro" -> "30";
             case "Fevereiro" -> "28";
-            default -> "Mês desconhecido";
+            default -> "mês desconhecido";
         };
         System.out.println("O mês de "+mes+" tem "+dias+" dias.");
     }
