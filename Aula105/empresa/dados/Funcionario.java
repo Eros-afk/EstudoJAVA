@@ -2,7 +2,7 @@ package empresa.dados;
 
 public class Funcionario{
     private String nome;
-    private double salario; //encapsulamento, só poder ser acessado dentro da própria classe
+    public double salario; //encapsulamento, só poder ser acessado dentro da própria classe
 
     public Funcionario(String nome, double salario){
         this.nome = nome;
@@ -16,5 +16,14 @@ public class Funcionario{
     public void aumentarSalario(double valor){
         //valor += 100;
         salario += valor;
+    }
+
+    public void alterarQualquerSalario(Funcionario func, double
+    novoSalario){
+        func.salario = novoSalario;
+    }
+
+    public void aumentarSalario(int porcetagem){
+        salario += salario * porcetagem / 100;
     }
 }
