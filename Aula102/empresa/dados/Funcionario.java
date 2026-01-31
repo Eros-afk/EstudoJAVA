@@ -11,7 +11,7 @@ public class Funcionario{
         System.out.println("Salário: " + salario);
     }
     
-    public Funcionario(){
+    protected Funcionario(){
         Funcionario func = new Funcionario("Roberto", 4500.00);
     }
 }
