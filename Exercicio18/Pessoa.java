@@ -4,6 +4,13 @@ public class Pessoa{
     protected String endereco;
     String telefone;
 
+    public Pessoa(String nome, int idade, String endereco, String telefone){
+        this.nome = nome;
+        this.idade = idade;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+
     public int getIdade(){
         return idade;
     }

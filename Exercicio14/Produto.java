@@ -9,13 +9,10 @@ public class Produto{
         quantidadedeEmEstoque = quantidadedeEmEstoqueInit;
     }
 
-    public String getNome() {
-        return nome;
-    }
-    public double getPreco(){
-        return preco;
-    }
-    public int getqunatidadeEmEstoque(){
-        return quantidadedeEmEstoque;
+    public void exibirProduto(){
+        System.out.println("Produto: " + nome);
+        System.out.println("Preço: " + preco);
+        System.out.println("Quantidade em Estoque: " + quantidadedeEmEstoque);
+        System.out.println("");
     }
 }

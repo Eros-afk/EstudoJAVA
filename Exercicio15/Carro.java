@@ -3,6 +3,7 @@ public class Carro{
     String modeloDoCarro;
     int anoDoCarro;
 
+    //Contrutor padrão (vazio)
     public Carro(){
         marcaDoCarro = "Desconhecida";
         modeloDoCarro = "Desconhecido";

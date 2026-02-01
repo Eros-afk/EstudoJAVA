@@ -5,7 +5,7 @@ class SalaDeAula{
         SalaDeAula.numAlunos += numAlunos;
     }
 
-    public static void mostrarNumAlunos(int numAlunos){
+    public static void mostrarNumAlunos(){
         System.out.println("Número total de alunos na sala de aula: " + numAlunos);
     }
 }

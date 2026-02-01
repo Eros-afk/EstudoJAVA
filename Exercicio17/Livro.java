@@ -2,7 +2,7 @@ class Livro{
     public String titulo;
     private String autor;
     protected int anoPublicacao;
-    float preco;
+    float preco; // preço com visibilidade padrão
 
     public Livro(){
         titulo = "Desconhecido";
