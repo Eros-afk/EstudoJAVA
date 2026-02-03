@@ -1,16 +1,22 @@
-interface Animal{
+interface SerVivo{
+    void respirar();
+}
+
+interface Animal extends SerVivo{
     String DESCRICAO = "Interface para animal";
     void fazerSom();
 }
 
 //Classe Cachorro implementa a interface Animal
 class Cachorro implements Animal{
+    public void respirar(){};
     public void fazerSom(){
         System.out.println("Au Au");
     }
 }
 
 class Gato implements Animal{
+    public void respirar(){};
     public void fazerSom(){
         System.out.println("Miau Miau");
     }
