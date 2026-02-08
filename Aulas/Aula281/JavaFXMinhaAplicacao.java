@@ -8,6 +8,6 @@ public class JavaFXMinhaAplicacao extends Application{
         palco.show();
     }
     public static void main(String[] args) {
-        lauch(args);
+        launch(args);
     }
 }
