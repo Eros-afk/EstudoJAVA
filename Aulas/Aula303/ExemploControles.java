@@ -17,7 +17,7 @@ public class ExemploControles extends Application {
         
         Button botao = new Button("Clique aqui");
         botao.setStyle("-fx-background-color: rgba(255, 0, 0, 0.5); -fx-text-fill: white;  -fx-font-family: 'Verdana'; -fx-font-size: 12px;");
-        //botao.setStyle("-fx-background-color: rgba(255, 0, 0, 0.5); -fx-text-fill: white;");
+        // botao.setStyle("-fx-background-color: rgba(255, 0, 0, 0.5); -fx-text-fill: white;");
 
         TextField campoTexto = new TextField();
         campoTexto.setStyle("-fx-background-color: green; -fx-text-fill: red;  -fx-font-family: 'Courier New'; -fx-font-size: 16px;");
