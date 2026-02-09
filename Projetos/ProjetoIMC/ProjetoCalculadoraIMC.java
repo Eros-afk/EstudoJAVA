@@ -1,7 +1,4 @@
 
-import java.awt.Insets;
-import java.awt.TextField;
-import java.lang.classfile.Label;
 import javafx.application.*;
 import javafx.geometry.*;
 import javafx.scene.*;
@@ -29,11 +26,15 @@ public class ProjetoCalculadoraIMC extends Application{
         //Botão para calcular o IMC
         Button botaoCalcular = new Button("Calcular IMC");
         botaoCalcular.setOnAction(e -> {
-            double peso = Double.parseDouble(campoPeso.getText());
-            double altura = Double.parseDouble(campoAltura.getText());
-            
-            double imc = peso / (altura*altura);
-            etiquetaResultado.setText(String.format("Seu IMC é: %.2f", imc));
+            try {
+                double peso = Double.parseDouble(campoPeso.getText().replace(',', '.'));
+                double altura = Double.parseDouble(campoAltura.getText().replace(',', '.'));
+                
+                double imc = peso / (altura*altura);
+                etiquetaResultado.setText(String.format("Seu IMC é: %.2f", imc));   
+            } catch (NumberFormatException ex) {
+                etiquetaResultado.setText("Por favor, insira números validos para peso e altura");
+            }
         });
 
         //Layout vertical
@@ -42,7 +43,7 @@ public class ProjetoCalculadoraIMC extends Application{
         layout.setAlignment(Pos.CENTER);
 
         //Cena e palco
-        Scene cena = new Scene(layout, 300, 250);
+        Scene cena = new Scene(layout, 400, 400);
         palco.setTitle("Calculadora de IMC");
         palco.setScene(cena);
         palco.show();
