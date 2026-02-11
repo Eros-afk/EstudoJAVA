@@ -6,10 +6,10 @@ public class ExceptionDivisaoPorZeroLancandoException{
     public static void main(String[] args) {
         int totalNotas = 10;
 
-        int qunatidadeAlunos = 0;
+        int quantidadeAlunos = 0;
 
         try {
-            int media = calcularMedia(totalNotas, qunatidadeAlunos);
+            int media = calcularMedia(totalNotas, quantidadeAlunos);
             System.out.println("Média: " + media);
         } catch (ArithmeticException e) {
             System.err.println("Erro: Divisão por Zero" + e.getMessage());

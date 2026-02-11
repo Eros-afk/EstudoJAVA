@@ -20,7 +20,7 @@ public class ProdutoDAO {
 
     //Método para inserir um novo produto no banco de dados
     public void inserir(Produto produto) {
-        String sql = "INSERT INTO produtos (nome_produto, qunatidade, preco, status) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO produtos (nome_produto, quantidade, preco, status) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = CONEXAO_DB.prepareStatement(sql)) {
             stmt.setString(1, produto.getNome());
             stmt.setInt(2, produto.getQuantidade());
@@ -52,9 +52,9 @@ public class ProdutoDAO {
                     Produto produto = new Produto();
                     produto.setId(rs.getInt("id_produto"));
                     produto.setNome(rs.getString("nome_produto"));
-                    produto.setQuantidade(rs.getInt("qunatidade"));
+                    produto.setQuantidade(rs.getInt("quantidade"));
                     produto.setPreco(rs.getDouble("preco"));
-                    produto.setStatus(rs.getString("satatus"));
+                    produto.setStatus(rs.getString("status"));
                     return produto;
                 }
             }
