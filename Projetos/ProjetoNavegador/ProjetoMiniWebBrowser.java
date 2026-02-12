@@ -6,6 +6,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.web.WebView;
 import javafx.scene.web.WebEngine;
+import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
+
 
 public class ProjetoMiniWebBrowser extends Application{
 
@@ -18,8 +21,19 @@ public class ProjetoMiniWebBrowser extends Application{
         //Carregar uma página da web quando o usuário pressiona Enter
         campoURL.setOnAction(evento -> motor.load(formataURL(campoURL.getText())));
 
+        Button botaoVoltar = new Button("← Voltar");
+
+        botaoVoltar.setOnAction(e -> {
+            if (motor.getHistory().getCurrentIndex() > 0) {
+                motor.getHistory().go(-1);
+            }
+        });
+
+        HBox barra = new HBox(botaoVoltar, campoURL);
+
         VBox vbox = new VBox();
-        vbox.getChildren().addAll(campoURL, navegador);
+        vbox.getChildren().addAll(barra, navegador);
+
         Scene cena = new Scene(vbox);
 
         palco.setTitle("Meu Browser Java");
