@@ -40,8 +40,33 @@
                     //Converte a resposta para JSON
                     return Response.json(); //Converte a resposta para JSON
                 }) //URL do endpoint
-                .then()
+                .then(data =>{
+                    //Obtem o corpo da tabela
+                    const tableBody = document.getElementById('produtosTable').getElementsByTagName('tbody')[0];
+                    let totalProdutos = 0; //Inicializa o contador de produtos
+                    //Itera sobre os dados recebidos e cria as linhas da tabela
+                    data.forEach(element => {
+                        const row = tableBody.insertRow();
+                        const callId = row.insertCell(0);
+                        const callNome = row.insertCell(1);
+                        const callPreco = row.insertCell(2);
+                        //Insere os dados nas células
+                        cellId.texContent = produto.id; //Insere o ID do produto na célula
+                        cellNome.texContent = produto.nome; //Insere o nome do produto na célula
+                        cellPreco.texContent = produto.preco; //Insere o preço do produto na célula
+                        totalProdutos++;
+                    });
+                    //Exibe o total de produtos
+                    document.getElementById('totalProdutos').textContent = 'Total de Produtos: ' + totalProdutos;
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar produtos: ', error); //Exibe o erro no console
+                    //Exibe a mensagem de erro
+                    document.getElementById('erroMensagem').style.display = 'block'; //Exibe a mensagem de erro
+                });
             }
+            //Executa a função listarProdutos quando a página é carregada
+            document.addEventListener('DOMContentLoaded', listarProdutos);
         </script>
     </body>
 </html>
