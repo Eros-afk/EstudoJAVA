@@ -1,4 +1,4 @@
-import javafx.application.Aplication;
+import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
@@ -24,7 +24,7 @@ public class ProjetoEditorDeTexto extends Application {
         ToolBar barraDeFerramentas = new ToolBar(botaoSalvar);
 
         //Configuração do layout principal
-        BordrePane borderPane = new BoderPane();
+        BorderPane borderPane = new BorderPane();
         borderPane.setTop(barraDeFerramentas);
         borderPane.setCenter(areaEditavel);
 
@@ -49,6 +49,6 @@ public class ProjetoEditorDeTexto extends Application {
     }
 
     public static void main(String[] args) {
-        lauch(args);
+        launch(args);
     }
 }
